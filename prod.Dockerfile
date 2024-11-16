@@ -22,5 +22,5 @@ COPY --from=build-env /myapp/bin/api /myapp/
 COPY --from=build-env /myapp/bin/migrate /myapp/
 COPY --from=build-env /myapp/migrations /myapp/migrations
 
-EXPOSE 3028
+EXPOSE 3023
 CMD ["/myapp/api"]

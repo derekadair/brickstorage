@@ -5,7 +5,7 @@ services:
     build: .
     env_file: .env
     ports:
-      - "3028:3028"
+      - "3023:3023"
     depends_on:
       db:
         condition: service_healthy

@@ -22,7 +22,7 @@ spec:
         command: ["/myapp/api"]
         ports:
         - name: httpport
-          containerPort: 3028
+          containerPort: 3023
         envFrom:
         - configMapRef:
             name: myapp-app-config
@@ -31,7 +31,7 @@ spec:
         readinessProbe:
           httpGet:
             path: /livez
-            port: 3028
+            port: 3023
           initialDelaySeconds: 5
           periodSeconds: 5
           successThreshold: 2
@@ -39,7 +39,7 @@ spec:
         livenessProbe:
           httpGet:
             path: /livez
-            port: 3028
+            port: 3023
           initialDelaySeconds: 5
           periodSeconds: 15
           timeoutSeconds: 5
