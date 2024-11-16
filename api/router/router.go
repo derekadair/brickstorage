@@ -10,6 +10,7 @@ import (
 
 	"myapp/api/resource/book"
 	"myapp/api/resource/bookweb"
+	"myapp/api/resource/health"
 	"myapp/api/router/middleware"
 	"myapp/api/router/middleware/requestlog"
 )
@@ -17,8 +18,8 @@ import (
 func New(l *zerolog.Logger, v *validator.Validate, db *gorm.DB) *chi.Mux {
 	r := chi.NewRouter()
 
-	//	r.Get("/livez", health.Read)
-	r.Get("/web", bookweb.Read)
+	r.Get("/livez", health.Read)
+	r.Get("/", bookweb.Read)
 
 	r.Route("/api/v1", func(r chi.Router) {
 		r.Use(middleware.RequestID)
