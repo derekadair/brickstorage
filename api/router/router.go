@@ -32,7 +32,7 @@ func New(l *zerolog.Logger, v *validator.Validate, db *gorm.DB) *chi.Mux {
 		r.Method(http.MethodDelete, "/books/{id}", requestlog.NewHandler(bookAPI.Delete, l))
 	})
 
-	r.Get("/", bookweb.Read)
+	r.Get("/web", bookweb.Read)
 
 	return r
 }
