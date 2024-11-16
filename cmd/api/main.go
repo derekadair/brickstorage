@@ -30,7 +30,7 @@ const fmtDBString = "host=%s user=%s password=%s dbname=%s port=%d sslmode=disab
 //	@license.name	MIT License
 //	@license.url	https://github.com/learning-cloud-native-go/myapp/blob/master/LICENSE
 
-// @host		localhost:8080
+// @host		localhost:3028
 // @basePath	/v1
 func main() {
 	c := config.New()
