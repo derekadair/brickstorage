@@ -1,0 +1,32 @@
+GET https://example.com/comments/1 HTTP/1.1
+
+###
+
+GET https://example.com/topics/1 HTTP/1.1
+
+###
+
+POST https://example.com/comments HTTP/1.1
+content-type: application/json
+
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+
+###
+GET https://lego.local.swimdeep.dev/v1/books HTTP/1.1
+
+###
+POST https://lego.local.swimdeep.dev/v1/books HTTP/1.1
+content-type: application/json
+
+{
+    "title": "The Hobbit",
+    "author": "JRR Tolkien",
+    "published_date": "2012-02-15",
+    "image_url": "https://m.media-amazon.com/images/I/61Ng-W9EhBL._SY445_SX342_.jpg"
+}
+
+###
+DELETE https://lego.local.swimdeep.dev/v1/books/672b18a6-96a9-4b5f-9233-c3250898943f HTTP/1.1

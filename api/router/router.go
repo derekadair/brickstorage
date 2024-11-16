@@ -9,6 +9,7 @@ import (
 	"gorm.io/gorm"
 
 	"myapp/api/resource/book"
+	"myapp/api/resource/bookweb"
 	"myapp/api/resource/health"
 	"myapp/api/router/middleware"
 	"myapp/api/router/middleware/requestlog"
@@ -19,7 +20,7 @@ func New(l *zerolog.Logger, v *validator.Validate, db *gorm.DB) *chi.Mux {
 
 	r.Get("/livez", health.Read)
 
-	r.Route("/v1", func(r chi.Router) {
+	r.Route("/api/v1", func(r chi.Router) {
 		r.Use(middleware.RequestID)
 		r.Use(middleware.ContentTypeJSON)
 
@@ -30,6 +31,8 @@ func New(l *zerolog.Logger, v *validator.Validate, db *gorm.DB) *chi.Mux {
 		r.Method(http.MethodPut, "/books/{id}", requestlog.NewHandler(bookAPI.Update, l))
 		r.Method(http.MethodDelete, "/books/{id}", requestlog.NewHandler(bookAPI.Delete, l))
 	})
+
+	r.Get("/", bookweb.Read)
 
 	return r
 }
