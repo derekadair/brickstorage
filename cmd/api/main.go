@@ -8,19 +8,19 @@ import (
 	"os/signal"
 	"syscall"
 
+	router "brickstorage/common"
+	"brickstorage/config"
+	"brickstorage/util/logger"
+	"brickstorage/util/validator"
+
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	gormlogger "gorm.io/gorm/logger"
-
-	"myapp/api/router"
-	"myapp/config"
-	"myapp/util/logger"
-	"myapp/util/validator"
 )
 
 const fmtDBString = "host=%s user=%s password=%s dbname=%s port=%d sslmode=disable"
 
-//	@title			MYAPP API
+//	@title			BRICKSTORAGE API
 //	@version		1.0
 //	@description	This is a sample RESTful API with a CRUD
 
@@ -28,7 +28,7 @@ const fmtDBString = "host=%s user=%s password=%s dbname=%s port=%d sslmode=disab
 //	@contact.url	https://learning-cloud-native-go.github.io
 
 //	@license.name	MIT License
-//	@license.url	https://github.com/learning-cloud-native-go/myapp/blob/master/LICENSE
+//	@license.url	https://github.com/learning-cloud-native-go/brickstorage/blob/master/LICENSE
 
 // @host		localhost:3023
 // @basePath	/v1

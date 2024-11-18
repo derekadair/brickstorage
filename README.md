@@ -1,7 +1,7 @@
 [![buymeacoffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-dumindu-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=ffffff&labelColor=333333)](https://www.buymeacoffee.com/dumindu)
 
 
-# Learning Cloud Native Go - myapp
+# Learning Cloud Native Go - brickstorage
 > 🌱 Cloud Native Application Development is one way of speeding up the building of web applications using microservices, containers, and orchestration tools.
 
 This repository shows how to build a Dockerized RESTful API application in Go for a simple bookshelf.
@@ -49,12 +49,12 @@ This repository shows how to build a Dockerized RESTful API application in Go fo
 - DB: 241MB
 - API
     - Development environment: 655MB
-    - Production environment: 28MB ; 💡`docker build -f prod.Dockerfile . -t myapp_app`
+    - Production environment: 28MB ; 💡`docker build -f prod.Dockerfile . -t brickstorage_app`
 
 ## 📁 Project structure
 
 ```shell
-myapp
+brickstorage
 ├── cmd
 │  ├── api
 │  │  └── main.go

@@ -1,7 +1,7 @@
 # Build environment
 # -----------------
 FROM golang:1.22-alpine as build-env
-WORKDIR /myapp
+WORKDIR /brickstorage
 
 RUN apk add --no-cache gcc musl-dev
 
@@ -18,9 +18,9 @@ RUN go build -ldflags '-w -s' -a -o ./bin/api ./cmd/api \
 # ----------------------
 FROM alpine
 
-COPY --from=build-env /myapp/bin/api /myapp/
-COPY --from=build-env /myapp/bin/migrate /myapp/
-COPY --from=build-env /myapp/migrations /myapp/migrations
+COPY --from=build-env /brickstorage/bin/api /brickstorage/
+COPY --from=build-env /brickstorage/bin/migrate /brickstorage/
+COPY --from=build-env /brickstorage/migrations /brickstorage/migrations
 
 EXPOSE 3023
-CMD ["/myapp/api"]
+CMD ["/brickstorage/api"]

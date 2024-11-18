@@ -1,33 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-app
-  namespace: myapp
+  name: brickstorage-app
+  namespace: brickstorage
   labels:
-    app: myapp-app
+    app: brickstorage-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myapp-app
+      app: brickstorage-app
   template:
     metadata:
       labels:
-        app: myapp-app
+        app: brickstorage-app
     spec:
       containers:
-      - name: myapp-app
-        image: learningcloudnativego/myapp-app:0.0.1
+      - name: brickstorage-app
+        image: learningcloudnativego/brickstorage-app:0.0.1
         imagePullPolicy: IfNotPresent
-        command: ["/myapp/api"]
+        command: ["/brickstorage/api"]
         ports:
         - name: httpport
           containerPort: 3023
         envFrom:
         - configMapRef:
-            name: myapp-app-config
+            name: brickstorage-app-config
         - secretRef:
-            name: myapp-app-secret
+            name: brickstorage-app-secret
         readinessProbe:
           httpGet:
             path: /livez

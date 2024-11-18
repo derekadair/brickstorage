@@ -11,10 +11,10 @@ import (
 	"github.com/rs/zerolog"
 	"gorm.io/gorm"
 
-	e "myapp/api/resource/common/err"
-	l "myapp/api/resource/common/log"
-	ctxUtil "myapp/util/ctx"
-	validatorUtil "myapp/util/validator"
+	e "brickstorage/common/resource/err"
+	l "brickstorage/common/resource/log"
+	ctxUtil "brickstorage/util/ctx"
+	validatorUtil "brickstorage/util/validator"
 )
 
 type API struct {

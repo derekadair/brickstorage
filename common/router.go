@@ -8,11 +8,11 @@ import (
 	"github.com/rs/zerolog"
 	"gorm.io/gorm"
 
-	"myapp/api/resource/book"
-	"myapp/api/resource/bookweb"
-	"myapp/api/resource/health"
-	"myapp/api/router/middleware"
-	"myapp/api/router/middleware/requestlog"
+	"brickstorage/api/router/middleware"
+	"brickstorage/api/router/middleware/requestlog"
+	"brickstorage/domain/book"
+	"brickstorage/web/bookweb"
+	"brickstorage/web/health"
 )
 
 func New(l *zerolog.Logger, v *validator.Validate, db *gorm.DB) *chi.Mux {

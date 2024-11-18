@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"myapp/api/router/middleware"
+	"brickstorage/api/router/middleware"
 )
 
 const testRespBody = `{"k":"v"}`

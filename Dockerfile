@@ -1,5 +1,5 @@
 FROM golang:1.22-alpine
-WORKDIR /myapp
+WORKDIR /brickstorage
 
 RUN apk add --no-cache gcc musl-dev
 
@@ -10,5 +10,5 @@ COPY . .
 RUN go build -ldflags '-w -s' -a -o ./bin/api ./cmd/api \
     && go build -ldflags '-w -s' -a -o ./bin/migrate ./cmd/migrate
 
-CMD ["/myapp/bin/api"]
+CMD ["/brickstorage/bin/api"]
 EXPOSE 3023

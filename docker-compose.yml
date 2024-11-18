@@ -9,19 +9,19 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    command: [ "sh", "-c", "/myapp/bin/migrate up && /myapp/bin/api" ]
+    command: [ "sh", "-c", "/brickstorage/bin/migrate up && /brickstorage/bin/api" ]
     restart: always
 
   db:
     image: postgres:alpine
     environment:
-      - POSTGRES_DB=myapp_db
-      - POSTGRES_USER=myapp_user
-      - POSTGRES_PASSWORD=myapp_pass
+      - POSTGRES_DB=brickstorage_db
+      - POSTGRES_USER=brickstorage_user
+      - POSTGRES_PASSWORD=brickstorage_pass
     ports:
       - "5432:5432"
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U myapp_user -d myapp_db" ]
+      test: [ "CMD-SHELL", "pg_isready -U brickstorage_user -d brickstorage_db" ]
       interval: 3s
       timeout: 5s
       retries: 5

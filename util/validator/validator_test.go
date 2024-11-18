@@ -3,7 +3,7 @@ package validator_test
 import (
 	"testing"
 
-	"myapp/util/validator"
+	"brickstorage/util/validator"
 )
 
 type testCase struct {

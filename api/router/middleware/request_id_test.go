@@ -5,8 +5,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"myapp/api/router/middleware"
-	ctxUtil "myapp/util/ctx"
+	"brickstorage/api/router/middleware"
+	ctxUtil "brickstorage/util/ctx"
 )
 
 func TestRequestID(t *testing.T) {

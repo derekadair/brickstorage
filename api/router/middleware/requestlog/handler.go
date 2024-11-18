@@ -23,7 +23,7 @@ import (
 
 	"github.com/rs/zerolog"
 
-	ctxUtil "myapp/util/ctx"
+	ctxUtil "brickstorage/util/ctx"
 )
 
 type Handler struct {

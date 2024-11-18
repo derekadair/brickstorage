@@ -7,9 +7,9 @@ import (
 	"github.com/DATA-DOG/go-sqlmock"
 	"github.com/google/uuid"
 
-	"myapp/api/resource/book"
-	mockDB "myapp/mock/db"
-	testUtil "myapp/util/test"
+	"brickstorage/domain/book"
+	mockDB "brickstorage/mock/db"
+	testUtil "brickstorage/util/test"
 )
 
 func TestRepository_List(t *testing.T) {

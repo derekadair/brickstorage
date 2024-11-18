@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: myapp-app-config
-  namespace: myapp
+  name: brickstorage-app-config
+  namespace: brickstorage
   labels:
-    app: myapp-app-config
+    app: brickstorage-app-config
 data:
   DEBUG: 'false'
   SERVER_PORT: '3023'
