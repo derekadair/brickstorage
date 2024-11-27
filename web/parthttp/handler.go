@@ -40,17 +40,18 @@ func NewPartHandler(service *part.List, partView *views.ModelView[part.Part], in
 	}
 
 	router.Route("/api/v1", func(router chi.Router) {
-		router.Method(http.MethodGet, "/", handler.index)
+		router.Method(http.MethodGet, "/", handler)
 		//r.Method(http.MethodGet, "/books", requestlog.NewHandler(bookAPI.List, l))
-		//router.Get("/", handler.index).Methods(http.MethodGet)
-		router.Post("/parts", handler.add).Methods(http.MethodPost)
-		router.Get("/parts", handler.search).Methods(http.MethodGet)
-		router.Post("/parts/sort", handler.reOrder).Methods(http.MethodPost)
-		router.Get("/parts/{ID}/edit", handler.edit).Methods(http.MethodGet)
-		router.Post("/parts/{ID}/toggle", handler.toggle).Methods(http.MethodPost)
-		router.Delete("/parts/{ID}", handler.delete).Methods(http.MethodDelete)
-		router.Patch("/parts/{ID}", handler.rename).Methods(http.MethodPatch)
-		router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", staticHandler))
+		router.Get("/", handler.index)	//.Methods(http.MethodGet)
+		router.Post("/parts", handler.add)                //.Methods(http.MethodPost)
+		router.Get("/parts", handler.search)              //.Methods(http.MethodGet)
+		router.Post("/parts/sort", handler.reOrder)       //.Methods(http.MethodPost)
+		router.Get("/parts/{ID}/edit", handler.edit)      //.Methods(http.MethodGet)
+		router.Post("/parts/{ID}/toggle", handler.toggle) //.Methods(http.MethodPost)
+		router.Delete("/parts/{ID}", handler.delete)      //.Methods(http.MethodDelete)
+		router.Patch("/parts/{ID}", handler.rename)       //.Methods(http.MethodPatch)
+		router.Handle("/static/*", http.StripPrefix("/static/", staticHandler))
+		//router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", staticHandler))
 	})
 
 	return handler, nil

@@ -1,6 +1,4 @@
-version: '3.9'
 services:
-
   app:
     build: .
     env_file: .env
@@ -26,3 +24,28 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
+#    volumes:
+#      - pg_data:/var/lib/postgresql/data/pg_data
+#    environment:
+#      POSTGRES_PASSWORD: example
+#      POSTGRES_DB: example
+#      POSTGRES_USER: example
+#      POSTGRES_HOST: pg.example_net
+#      POSTGRES_PORT: 5432
+#      PGDATA: /var/lib/postgresql/data/pg_data
+#networks:
+#  net:
+#volumes:
+#  pg_data:
+
+#  volumes:
+#    - db_data:/var/lib/postgresql/data
+#    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+#  migrations:
+#    image: migrate/migrate
+#    command: -database postgres://postgres:password@database:5432/database?sslmode=disable -path /migrations up
+#    volumes:
+#      - ./migrations:/migrations
+#    working_dir: /migrations
